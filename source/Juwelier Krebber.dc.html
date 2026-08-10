@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Juwelier Krebber — Uhren & Juwelen in Mönchengladbach-Rheydt</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<style>
+  :root { --kb-accent: #8C6A3F; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: #F2EEE8; overflow-x: hidden; }
+  * { box-sizing: border-box; }
+  img { max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: var(--kb-accent); }
+  ::selection { background: #131110; color: #F2EEE8; }
+  [data-strip]::-webkit-scrollbar { display: none; }
+  @keyframes kbMarquee { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
+  @keyframes kbScrollLine { 0% { transform: scaleY(0); transform-origin: top; } 45% { transform: scaleY(1); transform-origin: top; } 55% { transform: scaleY(1); transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
+  @media (max-width: 980px) {
+    [data-desknav] { display: none !important; }
+    [data-burger] { display: flex !important; }
+    [data-split] { grid-template-columns: 1fr !important; gap: 40px !important; }
+    [data-intro] { grid-template-columns: 1fr !important; gap: 28px !important; }
+    [data-hidem] { display: none !important; }
+    [data-svcrow] { grid-template-columns: 1fr !important; gap: 6px !important; padding: 22px 0 !important; }
+    [data-jgrid] { grid-template-columns: repeat(2, 1fr) !important; }
+    [data-joffset] { margin-top: 0 !important; }
+    [data-contact] { grid-template-columns: 1fr !important; }
+  }
+  @media (max-width: 560px) {
+    [data-jgrid] { grid-template-columns: 1fr !important; }
+  }
+</style>
+</helmet>
+
+<div style="background:#F2EEE8;color:#131110;font-family:'Instrument Sans',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;width:100%;overflow-x:hidden;position:relative;">
+
+  <header data-header="" style="position:fixed;top:0;left:0;right:0;z-index:80;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px clamp(18px,4vw,48px);color:#F2EEE8;transition:background .5s cubic-bezier(.2,.7,.2,1),color .5s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1),border-color .5s ease;border-bottom:1px solid rgba(255,255,255,0);">
+    <a href="#top" style="display:flex;flex-direction:column;line-height:1;gap:5px;">
+      <span style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(19px,2vw,24px);letter-spacing:.14em;">KREBBER</span>
+      <span style="font-size:9px;letter-spacing:.28em;text-transform:uppercase;opacity:.65;">Juwelier · Rheydt</span>
+    </a>
+    <nav data-desknav="" style="display:flex;align-items:center;gap:clamp(18px,2.4vw,34px);font-size:12px;letter-spacing:.14em;text-transform:uppercase;">
+      <a href="#haus">Das Haus</a>
+      <a href="#uhren">Uhren</a>
+      <a href="#schmuck">Schmuck</a>
+      <a href="#service">Service</a>
+      <a href="#trauringe">Trauringe</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:14px;">
+      <a data-hidem="" href="#kontakt" data-cta="" style="display:inline-flex;align-items:center;gap:10px;border:1px solid currentColor;border-radius:999px;padding:10px 20px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;transition:background .4s ease,color .4s ease;">Termin vereinbaren</a>
+      <button data-burger="" type="button" aria-label="Menü öffnen" style="display:none;align-items:center;justify-content:center;flex-direction:column;gap:6px;width:46px;height:46px;border:1px solid currentColor;border-radius:999px;background:transparent;color:inherit;cursor:pointer;padding:0;">
+        <span data-b1="" style="display:block;width:16px;height:1px;background:currentColor;transition:transform .45s cubic-bezier(.2,.7,.2,1);"></span>
+        <span data-b2="" style="display:block;width:16px;height:1px;background:currentColor;transition:transform .45s cubic-bezier(.2,.7,.2,1),opacity .3s ease;"></span>
+      </button>
+    </div>
+  </header>
+
+  <div data-menu="" style="position:fixed;inset:0;z-index:79;background:#131110;color:#F2EEE8;opacity:0;pointer-events:none;transition:opacity .5s cubic-bezier(.2,.7,.2,1);display:flex;flex-direction:column;justify-content:space-between;gap:32px;padding:96px clamp(20px,6vw,48px) 32px;overflow-y:auto;">
+    <nav style="display:flex;flex-direction:column;gap:2px;">
+      <a data-mlink="" href="#haus" style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(28px,min(9.5vw,8.5vh),56px);line-height:1.14;">Das Haus</a>
+      <a data-mlink="" href="#uhren" style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(28px,min(9.5vw,8.5vh),56px);line-height:1.14;">Uhren</a>
+      <a data-mlink="" href="#schmuck" style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(28px,min(9.5vw,8.5vh),56px);line-height:1.14;">Schmuck</a>
+      <a data-mlink="" href="#service" style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(28px,min(9.5vw,8.5vh),56px);line-height:1.14;">Service</a>
+      <a data-mlink="" href="#trauringe" style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(28px,min(9.5vw,8.5vh),56px);line-height:1.14;">Trauringe</a>
+      <a data-mlink="" href="#kontakt" style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(28px,min(9.5vw,8.5vh),56px);line-height:1.14;">Kontakt</a>
+    </nav>
+    <div style="display:flex;flex-direction:column;gap:6px;font-size:13px;letter-spacing:.04em;color:rgba(242,238,232,.6);">
+      <span>Limitenstraße 55 · 41236 Mönchengladbach-Rheydt</span>
+      <a href="tel:+4921668877" style="color:var(--kb-accent);">+49 2166 88 77</a>
+    </div>
+  </div>
+
+  <section id="top" style="position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background:#131110;color:#F2EEE8;padding:0 clamp(18px,4vw,48px) clamp(26px,4vw,44px);">
+    <div style="position:absolute;inset:0;overflow:hidden;">
+      <img data-hero="" src="https://www.juwelierkrebber.de/cdn/shop/files/Innenaufnahme_Kopie.jpg?v=1700738492&amp;width=2400" alt="Verkaufsraum von Juwelier Krebber in Rheydt" style="width:100%;height:100%;object-fit:cover;will-change:transform;transform:scale(1.06);" />
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(19,17,16,.62) 0%,rgba(19,17,16,.22) 38%,rgba(19,17,16,.78) 100%);"></div>
+    </div>
+    <div style="position:relative;max-width:1600px;width:100%;margin:0 auto;padding-top:120px;">
+      <div data-rv="" data-d="100" style="font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:rgba(242,238,232,.72);margin-bottom:clamp(18px,3vw,30px);">Uhren & Juwelen — Mönchengladbach-Rheydt</div>
+      <h1 style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(42px,8.4vw,124px);line-height:.96;letter-spacing:-.02em;text-wrap:balance;">
+        <span style="display:block;overflow:hidden;padding-bottom:.06em;"><span data-line="" style="display:block;">Für Momente,</span></span>
+        <span style="display:block;overflow:hidden;padding-bottom:.06em;"><span data-line="" style="display:block;">die bleiben —</span></span>
+        <span style="display:block;overflow:hidden;padding-bottom:.06em;"><span data-line="" style="display:block;font-style:italic;color:var(--kb-accent);">seit Generationen.</span></span>
+      </h1>
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:32px;margin-top:clamp(28px,4vw,48px);flex-wrap:wrap;">
+        <p data-rv="" data-d="260" style="margin:0;max-width:46ch;font-size:clamp(15px,1.15vw,18px);line-height:1.65;color:rgba(242,238,232,.8);text-wrap:pretty;">Eine erlesene Auswahl namhafter Manufakturen, eine eigene Meisterwerkstatt und eine Beratung, die sich Zeit nimmt. Willkommen an der Limitenstraße.</p>
+        <div data-rv="" data-d="360" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+          <a href="#kontakt" style="display:inline-flex;align-items:center;gap:12px;background:#F2EEE8;color:#131110;border-radius:999px;padding:15px 26px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;transition:transform .5s cubic-bezier(.2,.7,.2,1),background .4s ease;" style-hover="transform:translateY(-3px);background:#ffffff;">Termin vereinbaren</a>
+          <a href="#uhren" style="display:inline-flex;align-items:center;gap:12px;border:1px solid rgba(242,238,232,.4);border-radius:999px;padding:15px 26px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;transition:border-color .4s ease,transform .5s cubic-bezier(.2,.7,.2,1);" style-hover="border-color:rgba(242,238,232,.9);transform:translateY(-3px);">Kollektionen</a>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:clamp(26px,4vw,46px);padding-top:18px;border-top:1px solid rgba(242,238,232,.18);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(242,238,232,.55);">
+        <span>Limitenstraße 55 · Rheydt</span>
+        <span data-hidem="">Breitling · Omega · TAG Heuer · Wellendorff · FOPE</span>
+        <span style="display:flex;align-items:center;gap:10px;">Scroll<span style="display:block;width:1px;height:26px;background:rgba(242,238,232,.6);animation:kbScrollLine 2.6s cubic-bezier(.6,0,.4,1) infinite;"></span></span>
+      </div>
+    </div>
+  </section>
+
+  <section id="haus" style="scroll-margin-top:80px;padding:clamp(80px,11vw,170px) clamp(18px,4vw,48px);">
+    <div data-intro="" style="max-width:1600px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.1fr);gap:clamp(30px,6vw,90px);align-items:start;">
+      <div data-rv="" style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#6B635A;position:sticky;top:110px;">01 — Das Haus</div>
+      <div>
+        <h2 data-rv="" style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(28px,4.2vw,62px);line-height:1.12;letter-spacing:-.015em;text-wrap:pretty;">Ein Juwelier ist kein Geschäft. Er ist ein Vertrauensverhältnis, das über Jahrzehnte wächst — und oft über Generationen weitergegeben wird.</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:clamp(24px,3vw,52px);margin-top:clamp(36px,5vw,70px);">
+          <p data-rv="" data-d="80" style="margin:0;color:#4A443D;text-wrap:pretty;">Bei uns in Rheydt finden Sie feine Uhren führender Manufakturen und Schmuck, der von Hand entsteht. Was wir empfehlen, haben wir selbst geprüft.</p>
+          <p data-rv="" data-d="160" style="margin:0;color:#4A443D;text-wrap:pretty;">In unserer Werkstatt arbeiten Uhrmacher und Goldschmiede unter einem Dach. Reparatur, Anfertigung und Wertermittlung bleiben im Haus.</p>
+          <p data-rv="" data-d="240" style="margin:0;color:#4A443D;text-wrap:pretty;">Und weil gute Entscheidungen Ruhe brauchen, nehmen wir uns Zeit — gern auch außerhalb der Öffnungszeiten, nach Vereinbarung.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="uhren" style="scroll-margin-top:80px;background:#131110;color:#F2EEE8;padding:clamp(70px,10vw,140px) 0 clamp(60px,8vw,110px);overflow:hidden;">
+    <div style="max-width:1600px;margin:0 auto;padding:0 clamp(18px,4vw,48px);display:flex;align-items:flex-end;justify-content:space-between;gap:28px;flex-wrap:wrap;">
+      <div>
+        <div data-rv="" style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:rgba(242,238,232,.55);margin-bottom:18px;">02 — Uhren</div>
+        <h2 data-rv="" data-d="80" style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(32px,5.6vw,86px);line-height:1.02;letter-spacing:-.02em;">Schweizer und deutsche <span style="font-style:italic;color:var(--kb-accent);">Uhrmacherkunst</span></h2>
+      </div>
+      <div data-rv="" data-d="160" style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,238,232,.5);padding-bottom:10px;">Seitlich scrollen →</div>
+    </div>
+
+    <div data-strip="" style="margin-top:clamp(36px,5vw,64px);display:flex;gap:clamp(14px,1.6vw,26px);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:0 clamp(18px,4vw,48px) 8px;cursor:grab;">
+      <a data-card="" href="#kontakt" style="flex:0 0 auto;width:clamp(230px,26vw,360px);scroll-snap-align:start;display:block;">
+        <div style="overflow:hidden;background:#1D1A18;aspect-ratio:3/4;">
+          <img loading="lazy" src="https://www.juwelierkrebber.de/cdn/shop/collections/Bretiling_Hero-men.jpg?v=1785331872&amp;width=1200" alt="Breitling" style="width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.2,1);" />
+        </div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-top:16px;">
+          <span style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(19px,1.7vw,26px);">Breitling</span>
+          <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,238,232,.45);">Chronomat</span>
+        </div>
+      </a>
+      <a data-card="" href="#kontakt" style="flex:0 0 auto;width:clamp(230px,26vw,360px);scroll-snap-align:start;display:block;">
+        <div style="overflow:hidden;background:#1D1A18;aspect-ratio:3/4;">
+          <img loading="lazy" src="https://www.juwelierkrebber.de/cdn/shop/collections/krebber_omega-seamaster-diver-300m.png?v=1777908684&amp;width=1200" alt="Omega" style="width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.2,1);" />
+        </div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-top:16px;">
+          <span style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(19px,1.7vw,26px);">Omega</span>
+          <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,238,232,.45);">Seamaster</span>
+        </div>
+      </a>
+      <a data-card="" href="#kontakt" style="flex:0 0 auto;width:clamp(230px,26vw,360px);scroll-snap-align:start;display:block;">
+        <div style="overflow:hidden;background:#1D1A18;aspect-ratio:3/4;">
+          <img loading="lazy" src="https://www.juwelierkrebber.de/cdn/shop/collections/krebber_WBK1312.BA0652.webp?v=1783611167&amp;width=1200" alt="TAG Heuer" style="width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.2,1);" />
+        </div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-top:16px;">
+          <span style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(19px,1.7vw,26px);">TAG Heuer</span>
+          <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,238,232,.45);">Carrera</span>
+        </div>
+      </a>
+      <a data-card="" href="#kontakt" style="flex:0 0 auto;width:clamp(230px,26vw,360px);scroll-snap-align:start;display:block;">
+        <div style="overflow:hidden;background:#1D1A18;aspect-ratio:3/4;">
+          <img loading="lazy" src="https://www.juwelierkrebber.de/cdn/shop/collections/imgi_24_1303-autobahn-neomatik-41-datum-sportgrau-detail-1-cms-neu_5be0e61b-7788-422d-af13-1e122d5d81d4.webp?v=1777908391&amp;width=1200" alt="NOMOS Glashütte" style="width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.2,1);" />
+        </div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-top:16px;">
+          <span style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(19px,1.7vw,26px);">NOMOS</span>
+          <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,238,232,.45);">Glashütte</span>
+        </div>
+      </a>
+      <a data-card="" href="#kontakt" style="flex:0 0 auto;width:clamp(230px,26vw,360px);scroll-snap-align:start;display:block;">
+        <div style="overflow:hidden;background:#1D1A18;aspect-ratio:3/4;">
+          <img loading="lazy" src="https://www.juwelierkrebber.de/cdn/shop/collections/CH-3126-BLBL_OpenGearTourbillon_slide.jpg?v=1775943919&amp;width=1200" alt="Chronoswiss" style="width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.2,1);" />
+        </div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-top:16px;">
+          <span style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(19px,1.7vw,26px);">Chronoswiss</span>
+          <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,238,232,.45);">Open Gear</span>
+        </div>
+      </a>
+      <a data-card="" href="#kontakt" style="flex:0 0 auto;width:clamp(230px,26vw,360px);scroll-snap-align:start;display:block;">
+        <div style="overflow:hidden;background:#1D1A18;aspect-ratio:3/4;">
+          <img loading="lazy" src="https://www.juwelierkrebber.de/cdn/shop/collections/MeisterSinger.jpg?v=1756974103&amp;width=1200" alt="MeisterSinger" style="width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.2,1);" />
+        </div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-top:16px;">
+          <span style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(19px,1.7vw,26px);">MeisterSinger</span>
+          <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,238,232,.45);">Einzeiger</span>
+        </div>
+      </a>
+      <a data-card="" href="#kontakt" style="flex:0 0 auto;width:clamp(230px,26vw,360px);scroll-snap-align:start;display:block;">
+        <div style="overflow:hidden;background:#1D1A18;aspect-ratio:3/4;">
+          <img loading="lazy" src="https://www.juwelierkrebber.de/cdn/shop/collections/krebber_uhr_29er-big-image-duo-2.png?v=1783610436&amp;width=1200" alt="Mühle Glashütte" style="width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.2,1);" />
+        </div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-top:16px;">
+          <span style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(19px,1.7vw,26px);">Mühle</span>
+          <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,238,232,.45);">Glashütte</span>
+        </div>
+      </a>
+      <a data-card="" href="#kontakt" style="flex:0 0 auto;width:clamp(230px,26vw,360px);scroll-snap-align:start;display:block;">
+        <div style="overflow:hidden;background:#1D1A18;aspect-ratio:3/4;">
+          <img loading="lazy" src="https://www.juwelierkrebber.de/cdn/shop/collections/JH_Website2018_Kollektionsseiten_Wristshots_maxbill-chronoscope.jpg?v=1783610503&amp;width=1200" alt="Junghans" style="width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.2,1);" />
+        </div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-top:16px;">
+          <span style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(19px,1.7vw,26px);">Junghans</span>
+          <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,238,232,.45);">max bill</span>
+        </div>
+      </a>
+    </div>
+
+    <div style="margin-top:clamp(46px,6vw,86px);border-top:1px solid rgba(242,238,232,.14);border-bottom:1px solid rgba(242,238,232,.14);overflow:hidden;padding:18px 0;">
+      <div data-marquee="" style="display:flex;width:max-content;gap:52px;animation:kbMarquee 42s linear infinite;will-change:transform;">
+        <sc-for list="{{ brands }}" as="b" hint-placeholder-count="12">
+          <span style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(18px,2vw,30px);color:rgba(242,238,232,.72);white-space:nowrap;">{{ b }}</span>
+        </sc-for>
+        <sc-for list="{{ brands }}" as="b" hint-placeholder-count="12">
+          <span style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(18px,2vw,30px);color:rgba(242,238,232,.72);white-space:nowrap;">{{ b }}</span>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="schmuck" style="scroll-margin-top:80px;padding:clamp(80px,11vw,170px) clamp(18px,4vw,48px);">
+    <div style="max-width:1600px;margin:0 auto;">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:28px;flex-wrap:wrap;">
+        <div>
+          <div data-rv="" style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#6B635A;margin-bottom:18px;">03 — Schmuck</div>
+          <h2 data-rv="" data-d="80" style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(32px,5.6vw,86px);line-height:1.02;letter-spacing:-.02em;">Von Hand gefertigt, <span style="font-style:italic;color:var(--kb-accent);">für Sie ausgewählt</span></h2>
+        </div>
+        <p data-rv="" data-d="160" style="margin:0;max-width:34ch;color:#4A443D;padding-bottom:8px;text-wrap:pretty;">Manufakturen aus Deutschland und Italien — dazu unsere hauseigenen Kollektionen Krebber Essentials und Krebber Colors.</p>
+      </div>
+
+      <div data-jgrid="" style="margin-top:clamp(40px,6vw,80px);display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.6vw,46px);">
+        <a data-card="" data-rv="" href="#kontakt" style="display:block;">
+          <div style="overflow:hidden;background:#E7E1D8;aspect-ratio:4/5;">
+            <img loading="lazy" src="https://www.juwelierkrebber.de/cdn/shop/collections/1000x1000.png?v=1781945738&amp;width=1200" alt="Wellendorff" style="width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.2,1);" />
+          </div>
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-top:14px;border-top:1px solid rgba(19,17,16,.14);margin-top:14px;">
+            <span style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(19px,1.7vw,28px);">Wellendorff</span>
+            <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#8A8177;">Pforzheim</span>
+          </div>
+        </a>
+        <a data-card="" data-rv="" data-d="80" data-joffset="" href="#kontakt" style="display:block;margin-top:clamp(20px,5vw,90px);">
+          <div style="overflow:hidden;background:#E7E1D8;aspect-ratio:3/4;">
+            <img loading="lazy" src="https://www.juwelierkrebber.de/cdn/shop/collections/fope-schmuckj.jpg?v=1778148519&amp;width=1200" alt="FOPE" style="width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.2,1);" />
+          </div>
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-top:14px;border-top:1px solid rgba(19,17,16,.14);margin-top:14px;">
+            <span style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(19px,1.7vw,28px);">FOPE</span>
+            <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#8A8177;">Vicenza</span>
+          </div>
+        </a>
+        <a data-card="" data-rv="" data-d="160" href="#kontakt" style="display:block;">
+          <div style="overflow:hidden;background:#E7E1D8;aspect-ratio:1/1;">
+            <img loading="lazy" src="https://www.juwelierkrebber.de/cdn/shop/collections/Krebberr_Serafino-Consoli_2503417-scaled.jpg?v=1781948133&amp;width=1200" alt="Serafino Consoli" style="width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.2,1);" />
+          </div>
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-top:14px;border-top:1px solid rgba(19,17,16,.14);margin-top:14px;">
+            <span style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(19px,1.7vw,28px);">Serafino Consoli</span>
+            <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#8A8177;">Neu in Rheydt</span>
+          </div>
+        </a>
+        <a data-card="" data-rv="" href="#kontakt" style="display:block;">
+          <div style="overflow:hidden;background:#E7E1D8;aspect-ratio:3/4;">
+            <img loading="lazy" src="https://www.juwelierkrebber.de/cdn/shop/collections/krebber_Rheydt_marco_bicego_CB2586-B_TP01_Y_0633_1512x_4b514f9e-ba73-4e42-925d-d7f991661faf.jpg?v=1781948596&amp;width=1200" alt="Marco Bicego" style="width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.2,1);" />
+          </div>
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-top:14px;border-top:1px solid rgba(19,17,16,.14);margin-top:14px;">
+            <span style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(19px,1.7vw,28px);">Marco Bicego</span>
+            <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#8A8177;">Handarbeit</span>
+          </div>
+        </a>
+        <a data-card="" data-rv="" data-d="80" data-joffset="" href="#kontakt" style="display:block;margin-top:clamp(20px,5vw,90px);">
+          <div style="overflow:hidden;background:#E7E1D8;aspect-ratio:1/1;">
+            <img loading="lazy" src="https://www.juwelierkrebber.de/cdn/shop/collections/SYLT_ILVA_NR-20-1z1-coll-01.jpg?v=1775226480&amp;width=1200" alt="Schaffrath" style="width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.2,1);" />
+          </div>
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-top:14px;border-top:1px solid rgba(19,17,16,.14);margin-top:14px;">
+            <span style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(19px,1.7vw,28px);">Schaffrath</span>
+            <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#8A8177;">Brillant</span>
+          </div>
+        </a>
+        <a data-card="" data-rv="" data-d="160" href="#kontakt" style="display:block;">
+          <div style="overflow:hidden;background:#E7E1D8;aspect-ratio:4/5;">
+            <img loading="lazy" src="https://www.juwelierkrebber.de/cdn/shop/collections/Krebber_Kollektion.jpg?v=1782489940&amp;width=1200" alt="Krebber Essentials" style="width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.2,1);" />
+          </div>
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-top:14px;border-top:1px solid rgba(19,17,16,.14);margin-top:14px;">
+            <span style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(19px,1.7vw,28px);">Krebber Essentials</span>
+            <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#8A8177;">Hauskollektion</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="service" data-svc="" style="scroll-margin-top:80px;padding:clamp(70px,10vw,150px) clamp(18px,4vw,48px);border-top:1px solid rgba(19,17,16,.12);position:relative;">
+    <div style="max-width:1600px;margin:0 auto;">
+      <div data-rv="" style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#6B635A;margin-bottom:18px;">04 — Werkstatt & Service</div>
+      <h2 data-rv="" data-d="80" style="margin:0 0 clamp(30px,5vw,60px);font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(32px,5.6vw,86px);line-height:1.02;letter-spacing:-.02em;max-width:16ch;">Alles bleibt <span style="font-style:italic;color:var(--kb-accent);">im Haus</span></h2>
+
+      <div style="border-top:1px solid rgba(19,17,16,.14);">
+        <sc-for list="{{ services }}" as="s" hint-placeholder-count="6">
+          <a data-svcitem="" data-img="{{ s.img }}" href="#kontakt" style="display:block;border-bottom:1px solid rgba(19,17,16,.14);transition:background .5s ease,padding .5s cubic-bezier(.2,.7,.2,1);">
+            <div data-svcrow="" style="display:grid;grid-template-columns:64px minmax(0,1.1fr) minmax(0,1.4fr) 40px;align-items:center;gap:24px;padding:clamp(18px,2.2vw,30px) clamp(0px,1.4vw,20px);">
+              <span style="font-size:11px;letter-spacing:.2em;color:#9A9188;">{{ s.no }}</span>
+              <span style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(22px,2.6vw,40px);line-height:1.1;">{{ s.title }}</span>
+              <span style="color:#5B544C;font-size:clamp(14px,1vw,16px);text-wrap:pretty;">{{ s.text }}</span>
+              <span data-hidem="" style="justify-self:end;font-size:18px;color:#9A9188;">→</span>
+            </div>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+    <div data-preview="" style="position:fixed;top:0;left:0;width:clamp(180px,17vw,280px);aspect-ratio:4/5;pointer-events:none;opacity:0;z-index:40;transition:opacity .45s cubic-bezier(.2,.7,.2,1);overflow:hidden;background:#E7E1D8;will-change:transform;">
+      <img data-previewimg="" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" style="width:100%;height:100%;object-fit:cover;" />
+    </div>
+  </section>
+
+  <section id="trauringe" style="scroll-margin-top:80px;background:#131110;color:#F2EEE8;">
+    <div data-split="" style="display:grid;grid-template-columns:1fr 1fr;align-items:stretch;">
+      <div style="overflow:hidden;min-height:clamp(320px,46vw,720px);">
+        <img data-par="" loading="lazy" src="https://www.juwelierkrebber.de/cdn/shop/files/Claim-Brevetto_eab418eb-8584-4117-b624-0d3e2645e546.jpg?v=1782464007&amp;width=2000" alt="Trauringe und Verlobungsringe" style="width:100%;height:100%;object-fit:cover;min-height:clamp(320px,46vw,720px);will-change:transform;" />
+      </div>
+      <div style="display:flex;flex-direction:column;justify-content:center;gap:26px;padding:clamp(48px,7vw,110px) clamp(20px,5vw,80px);">
+        <div data-rv="" style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:rgba(242,238,232,.55);">05 — Trauringliebe</div>
+        <h2 data-rv="" data-d="80" style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(30px,4.4vw,68px);line-height:1.05;letter-spacing:-.02em;">Zwei Ringe, ein <span style="font-style:italic;color:var(--kb-accent);">Versprechen</span></h2>
+        <p data-rv="" data-d="140" style="margin:0;max-width:44ch;color:rgba(242,238,232,.72);text-wrap:pretty;">Trauringe, Verlobungs- und Memoireringe wählen Sie bei uns in Ruhe aus — mit einem eigenen Termin, ohne Zeitdruck, und mit Anpassungen aus der eigenen Werkstatt.</p>
+        <div data-rv="" data-d="200" style="display:flex;flex-direction:column;gap:12px;font-size:14px;color:rgba(242,238,232,.62);border-top:1px solid rgba(242,238,232,.16);padding-top:22px;max-width:520px;">
+          <span>Persönlicher Trauring-Termin, auch außerhalb der Öffnungszeiten</span>
+          <span>Gravur, Weitenanpassung und Aufarbeitung im Haus</span>
+          <span>Verlobungsringe und Brautschmuck passend dazu</span>
+        </div>
+        <a data-rv="" data-d="260" href="#kontakt" style="align-self:flex-start;display:inline-flex;align-items:center;gap:12px;border:1px solid rgba(242,238,232,.4);border-radius:999px;padding:15px 26px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;transition:border-color .4s ease,transform .5s cubic-bezier(.2,.7,.2,1);" style-hover="border-color:rgba(242,238,232,.95);transform:translateY(-3px);">Trauring-Termin anfragen</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt" style="scroll-margin-top:80px;padding:clamp(70px,10vw,150px) clamp(18px,4vw,48px) clamp(40px,5vw,70px);">
+    <div style="max-width:1600px;margin:0 auto;">
+      <div data-rv="" style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#6B635A;margin-bottom:18px;">06 — Besuch</div>
+      <h2 data-rv="" data-d="80" style="margin:0 0 clamp(36px,5vw,70px);font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(32px,5.6vw,86px);line-height:1.02;letter-spacing:-.02em;max-width:18ch;">Kommen Sie <span style="font-style:italic;color:var(--kb-accent);">vorbei</span></h2>
+
+      <div data-contact="" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(28px,4vw,60px);border-top:1px solid rgba(19,17,16,.14);padding-top:clamp(28px,3vw,44px);">
+        <div data-rv="" style="display:flex;flex-direction:column;gap:12px;">
+          <span style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#9A9188;">Adresse</span>
+          <span style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(21px,2vw,30px);line-height:1.25;">Limitenstraße 55<br />41236 Mönchengladbach-Rheydt</span>
+          <a href="https://www.google.com/maps?daddr=Limitenstra%C3%9Fe+55,+41236+M%C3%B6nchengladbach" target="_blank" rel="noopener" style="align-self:flex-start;margin-top:6px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid rgba(19,17,16,.3);padding-bottom:4px;">Anfahrt planen</a>
+        </div>
+        <div data-rv="" data-d="90" style="display:flex;flex-direction:column;gap:12px;">
+          <span style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#9A9188;">Öffnungszeiten</span>
+          <div style="display:flex;flex-direction:column;gap:8px;font-size:15px;color:#3E3932;">
+            <span style="display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid rgba(19,17,16,.1);padding-bottom:8px;"><span>Dienstag – Freitag</span><span>10 – 18 Uhr</span></span>
+            <span style="display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid rgba(19,17,16,.1);padding-bottom:8px;"><span>Samstag</span><span>10 – 16 Uhr</span></span>
+            <span style="display:flex;justify-content:space-between;gap:16px;color:#9A9188;"><span>Sonntag & Montag</span><span>geschlossen</span></span>
+          </div>
+          <span style="font-size:13px;color:#6B635A;margin-top:4px;">Termine außerhalb der Öffnungszeiten gern nach Vereinbarung.</span>
+        </div>
+        <div data-rv="" data-d="180" style="display:flex;flex-direction:column;gap:12px;">
+          <span style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#9A9188;">Kontakt</span>
+          <a href="tel:+4921668877" style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(21px,2vw,30px);">+49 2166 88 77</a>
+          <a href="mailto:info@juwelierkrebber.de" style="font-size:15px;color:#3E3932;">info@juwelierkrebber.de</a>
+          <a href="#top" style="align-self:flex-start;margin-top:14px;display:inline-flex;align-items:center;gap:12px;background:#131110;color:#F2EEE8;border-radius:999px;padding:15px 26px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;transition:transform .5s cubic-bezier(.2,.7,.2,1),background .4s ease;" style-hover="transform:translateY(-3px);background:var(--kb-accent);">Termin vereinbaren</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="padding:0 clamp(18px,4vw,48px) clamp(24px,3vw,40px);">
+    <div style="max-width:1600px;margin:0 auto;">
+      <div style="overflow:hidden;border-top:1px solid rgba(19,17,16,.14);padding-top:clamp(20px,3vw,40px);">
+        <div data-rv="" style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(52px,15.5vw,250px);line-height:.9;letter-spacing:-.01em;white-space:nowrap;text-align:center;">KREBBER</div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:22px;font-size:12px;color:#6B635A;">
+        <div style="display:flex;gap:20px;flex-wrap:wrap;">
+          <a href="#kontakt">Impressum</a>
+          <a href="#kontakt">Datenschutz</a>
+          <a href="https://www.instagram.com/juwelierkrebber/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.facebook.com/juwelierkrebber/" target="_blank" rel="noopener">Facebook</a>
+        </div>
+        <span>© 2026 Juwelier Krebber, Mönchengladbach-Rheydt</span>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#8C6A3F&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#8C6A3F&quot;,&quot;#9A7B3C&quot;,&quot;#6E7F6B&quot;,&quot;#8A5B4E&quot;],&quot;section&quot;:&quot;Erscheinung&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Voll&quot;,&quot;options&quot;:[&quot;Voll&quot;,&quot;Reduziert&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Bewegung&quot;},&quot;marqueeSpeed&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:42,&quot;min&quot;:18,&quot;max&quot;:90,&quot;step&quot;:2,&quot;unit&quot;:&quot;s&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Bewegung&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      brands: ["Breitling", "Omega", "TAG Heuer", "NOMOS Glashütte", "Chronoswiss", "MeisterSinger", "Mühle Glashütte", "Junghans", "Wellendorff", "FOPE", "Serafino Consoli", "Marco Bicego", "Schaffrath", "Gellner", "Leo Wittwer", "Jörg Heinz"],
+      services: [
+        { no: "01", title: "Uhrmacher-Werkstatt", text: "Revision, Reparatur, Batteriewechsel und Wasserdichtigkeitsprüfung — von der Quarzuhr bis zum Chronographen.", img: "https://www.juwelierkrebber.de/cdn/shop/collections/CH-3126-BLBL_OpenGearTourbillon_slide.jpg?v=1775943919&width=900" },
+        { no: "02", title: "Goldschmiede & Anfertigung", text: "Umarbeitungen, Einzelanfertigungen und Reparaturen — entworfen und gefertigt in Rheydt.", img: "https://www.juwelierkrebber.de/cdn/shop/collections/Krebber_Kollektion.jpg?v=1782489940&width=900" },
+        { no: "03", title: "Trauringe & Verlobung", text: "Persönliche Beratung im eigenen Termin, inklusive Gravur und Weitenanpassung.", img: "https://www.juwelierkrebber.de/cdn/shop/collections/SYLT_ILVA_NR-20-1z1-coll-01.jpg?v=1775226480&width=900" },
+        { no: "04", title: "Ankauf & Wertermittlung", text: "Faire Bewertung von Altgold, Schmuck und Uhren — diskret und nachvollziehbar.", img: "https://www.juwelierkrebber.de/cdn/shop/collections/Krieger_krebber_rheydt.jpg?v=1781947902&width=900" },
+        { no: "05", title: "Perlen & Ketten", text: "Neuauffädeln, Schließenwechsel und die Pflege von Perlenschmuck.", img: "https://www.juwelierkrebber.de/cdn/shop/collections/Gellner_Schmuck.jpg?v=1781947957&width=900" },
+        { no: "06", title: "Service für Ihre Marke", text: "Autorisierter Service und Garantieabwicklung für die Häuser unseres Sortiments.", img: "https://www.juwelierkrebber.de/cdn/shop/collections/krebber_WBK1312.BA0652.webp?v=1783611167&width=900" }
+      ]
+    };
+  }
+
+  componentDidUpdate() { this.applyAccent(); }
+
+  applyAccent() {
+    document.documentElement.style.setProperty("--kb-accent", this.props.accent || "#8C6A3F");
+    const mq = this.props.marqueeSpeed;
+    const m = document.querySelector("[data-marquee]");
+    if (m && mq) m.style.animationDuration = mq + "s";
+  }
+
+  componentDidMount() {
+    this.applyAccent();
+    const reduced = this.props.motion === "Reduziert" || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const ease = "cubic-bezier(.2,.7,.2,1)";
+    const root = document;
+
+    // ── entrance for hero headline lines
+    root.querySelectorAll("[data-line]").forEach((el, i) => {
+      if (reduced) return;
+      el.style.transform = "translateY(105%)";
+      el.style.transition = "transform 1.15s " + ease + " " + (120 + i * 110) + "ms";
+      requestAnimationFrame(() => requestAnimationFrame(() => { el.style.transform = "translateY(0)"; }));
+    });
+
+    // ── scroll reveals
+    const rv = Array.from(root.querySelectorAll("[data-rv]"));
+    if (!reduced) {
+      rv.forEach((el) => {
+        el.style.opacity = "0";
+        el.style.transform = "translateY(26px)";
+        const d = el.getAttribute("data-d") || "0";
+        el.style.transition = "opacity 1s " + ease + " " + d + "ms, transform 1s " + ease + " " + d + "ms";
+      });
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          e.target.style.opacity = "1";
+          e.target.style.transform = "translateY(0)";
+          io.unobserve(e.target);
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+      rv.forEach((el) => io.observe(el));
+      this._io = io;
+    }
+
+    // ── header behaviour
+    const header = root.querySelector("[data-header]");
+    const hero = root.querySelector("[data-hero]");
+    const par = root.querySelector("[data-par]");
+    const heroSec = root.querySelector("#top");
+    let last = 0, ticking = false;
+    const onScroll = () => {
+      const y = heroSec ? Math.max(0, -heroSec.getBoundingClientRect().top) : (window.scrollY || 0);
+      if (header) {
+        const solid = y > window.innerHeight * 0.82;
+        header.style.background = solid ? "rgba(242,238,232,.92)" : "rgba(0,0,0,0)";
+        header.style.backdropFilter = solid ? "blur(14px)" : "none";
+        header.style.webkitBackdropFilter = solid ? "blur(14px)" : "none";
+        header.style.color = solid ? "#131110" : "#F2EEE8";
+        header.style.borderBottomColor = solid ? "rgba(19,17,16,.12)" : "rgba(255,255,255,0)";
+        const hidden = y > last && y > window.innerHeight && !this._menuOpen;
+        header.style.transform = hidden ? "translateY(-102%)" : "translateY(0)";
+      }
+      if (hero && !reduced) {
+        const p = Math.min(y / window.innerHeight, 1);
+        hero.style.transform = "scale(" + (1.06 + p * 0.08) + ") translateY(" + p * 5 + "%)";
+      }
+      if (par && !reduced) {
+        const r = par.getBoundingClientRect();
+        if (r.bottom > 0 && r.top < window.innerHeight) {
+          const p = (r.top + r.height / 2 - window.innerHeight / 2) / window.innerHeight;
+          par.style.transform = "scale(1.1) translateY(" + (-p * 3.2) + "%)";
+        }
+      }
+      last = y;
+      ticking = false;
+    };
+    this._onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } };
+    window.addEventListener("scroll", this._onScroll, { passive: true, capture: true });
+    onScroll();
+
+    // ── burger menu
+    const menu = root.querySelector("[data-menu]");
+    const burger = root.querySelector("[data-burger]");
+    const b1 = root.querySelector("[data-b1]");
+    const b2 = root.querySelector("[data-b2]");
+    const links = Array.from(root.querySelectorAll("[data-mlink]"));
+    links.forEach((l) => { l.style.opacity = "0"; l.style.transform = "translateY(24px)"; });
+    const setMenu = (open) => {
+      this._menuOpen = open;
+      if (!menu) return;
+      menu.style.opacity = open ? "1" : "0";
+      menu.style.pointerEvents = open ? "auto" : "none";
+      document.body.style.overflow = open ? "hidden" : "";
+      if (header) { header.style.color = open ? "#F2EEE8" : (window.scrollY > window.innerHeight * 0.82 ? "#131110" : "#F2EEE8"); header.style.transform = "translateY(0)"; }
+      if (b1) b1.style.transform = open ? "translateY(3.5px) rotate(45deg)" : "none";
+      if (b2) { b2.style.transform = open ? "translateY(-3.5px) rotate(-45deg)" : "none"; }
+      links.forEach((l, i) => {
+        l.style.transition = "opacity .6s " + ease + " " + (open ? 140 + i * 60 : 0) + "ms, transform .7s " + ease + " " + (open ? 140 + i * 60 : 0) + "ms, color .3s ease";
+        l.style.opacity = open ? "1" : "0";
+        l.style.transform = open ? "translateY(0)" : "translateY(24px)";
+      });
+    };
+    this._setMenu = setMenu;
+    if (burger) burger.addEventListener("click", () => setMenu(!this._menuOpen));
+    links.forEach((l) => l.addEventListener("click", () => setMenu(false)));
+    this._onKey = (e) => { if (e.key === "Escape") setMenu(false); };
+    window.addEventListener("keydown", this._onKey);
+
+    // ── card hover zoom
+    root.querySelectorAll("[data-card]").forEach((c) => {
+      const img = c.querySelector("img");
+      if (!img) return;
+      c.addEventListener("mouseenter", () => { img.style.transform = "scale(1.06)"; });
+      c.addEventListener("mouseleave", () => { img.style.transform = "scale(1)"; });
+    });
+
+    // ── service list: cursor-following image preview
+    const svc = root.querySelector("[data-svc]");
+    const prev = root.querySelector("[data-preview]");
+    const prevImg = root.querySelector("[data-previewimg]");
+    if (svc && prev && prevImg && window.matchMedia("(hover: hover)").matches && !reduced) {
+      let tx = 0, ty = 0, cx = 0, cy = 0, raf = null;
+      const loop = () => {
+        cx += (tx - cx) * 0.12; cy += (ty - cy) * 0.12;
+        prev.style.transform = "translate3d(" + (cx - 40) + "px," + (cy - 120) + "px,0)";
+        raf = requestAnimationFrame(loop);
+      };
+      svc.addEventListener("mousemove", (e) => { tx = e.clientX + 30; ty = e.clientY; });
+      root.querySelectorAll("[data-svcitem]").forEach((row) => {
+        row.addEventListener("mouseenter", (e) => {
+          prevImg.src = row.getAttribute("data-img") || "";
+          prev.style.opacity = "1";
+          row.style.background = "rgba(19,17,16,.035)";
+          cx = e.clientX + 30; cy = e.clientY;
+          if (!raf) loop();
+        });
+        row.addEventListener("mouseleave", () => {
+          prev.style.opacity = "0";
+          row.style.background = "transparent";
+        });
+      });
+      svc.addEventListener("mouseleave", () => { prev.style.opacity = "0"; if (raf) { cancelAnimationFrame(raf); raf = null; } });
+      this._stopPrev = () => { if (raf) cancelAnimationFrame(raf); };
+    }
+
+    // ── drag-to-scroll on watch strip
+    const strip = root.querySelector("[data-strip]");
+    if (strip) {
+      let down = false, sx = 0, sl = 0, moved = false;
+      strip.addEventListener("pointerdown", (e) => { down = true; moved = false; sx = e.clientX; sl = strip.scrollLeft; strip.style.cursor = "grabbing"; });
+      strip.addEventListener("pointermove", (e) => {
+        if (!down) return;
+        const dx = e.clientX - sx;
+        if (Math.abs(dx) > 4) moved = true;
+        strip.scrollLeft = sl - dx;
+      });
+      const up = () => { down = false; strip.style.cursor = "grab"; };
+      strip.addEventListener("pointerup", up);
+      strip.addEventListener("pointerleave", up);
+      strip.addEventListener("click", (e) => { if (moved) { e.preventDefault(); } });
+    }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this._onScroll, { capture: true });
+    window.removeEventListener("keydown", this._onKey);
+    if (this._io) this._io.disconnect();
+    if (this._stopPrev) this._stopPrev();
+    document.body.style.overflow = "";
+  }
+}
+</script>
+</body>
+</html>
